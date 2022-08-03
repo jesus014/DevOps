@@ -12,6 +12,22 @@ usuario=> angular frontend=> microservice2 backend=> postgres
 
 ## Comandos usados en docker.
 
+Documentacion:
+
+https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-linux-systems
+
+https://docs.docker.com/compose/compose-file/compose-versioning/
+
+Instalacion de Docker Compose V2:
+
+```
+ curl -SL https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+```
+
+```
+curl -SL https://github.com/docker/compose/releases/download/v2.7.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+```
+
 Imagenes y contenedores:
 
 **Descargar la imagen cualquiera**
@@ -110,4 +126,55 @@ hacer un push de la imagen
 
 ```
 docker push sotobotero/udemy-devops:0.0.2
+```
+
+## Comandos Docker:
+
+
+Eliminar todos los contenedores detenidos
+
+```
+docker system prune
+```
+
+Eliminar todas las imágenes
+
+```
+docker rmi $(docker images -a -q)
+```
+
+Listar los volumenes
+
+```
+docker volume ls
+```
+
+Eliminar todos los volumenes
+
+```
+docker volume prune
+```
+
+Construir las imagenes definidas en la orquestación
+
+```
+docker-compose -f stack-billing.yml build
+```
+
+Inicializar los contenedores de los servicios de la orquestación
+
+```
+docker-compose -f stack-billing.yml up -d
+```
+
+Detener todos los servicios de la orquestación
+
+```
+docker-compose -f stack-billing.yml sto
+```
+
+Detener todos los contenedores
+
+```
+docker stop $(docker ps -a -q)
 ```
