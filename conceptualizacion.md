@@ -33,3 +33,6 @@ se puede conectar a la nube o bajo un volumen(mapear unidad de almacenamiento).
 ## Mapeo
 
 se puede definir como el mapeo de una carpeta host a nuestro contenedor para hacer informacion persistente.
+
+
+## Redes.

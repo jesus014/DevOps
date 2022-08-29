@@ -96,6 +96,44 @@ Url de la inteface de adminer
 
 http://localhost:9090/
 
+Construir las imagenes definidas en la orquestación
+
+```
+docker-compose -f stack-billing.yml build
+```
+
+Inicializar los contenedores de los servicios de la orquestación
+
+```
+docker-compose -f stack-billing.yml up -d
+```
+
+Detener todos los servicios de la orquestación
+
+```
+docker-compose -f stack-billing.yml stop
+```
+
+Detener todos los contenedores
+
+```
+docker stop $(docker ps -a -q)
+```
+
+reconstruir las imagenes
+
+```
+docker-compose -f stack-billing.yml build --no-cache
+```
+
+reconstruir los contenedores de la orquestación
+
+```
+docker-compose -f stack-billing.yml up -d --force-recreate
+```
+
+
+
 ## crear una imagen:
 
 Costruir la imagen
@@ -130,7 +168,6 @@ docker push sotobotero/udemy-devops:0.0.2
 
 ## Comandos Docker:
 
-
 Eliminar todos los contenedores detenidos
 
 ```
@@ -155,26 +192,14 @@ Eliminar todos los volumenes
 docker volume prune
 ```
 
-Construir las imagenes definidas en la orquestación
+Revsiar consumo de recursos
 
 ```
-docker-compose -f stack-billing.yml build
+docker stats
 ```
 
-Inicializar los contenedores de los servicios de la orquestación
+Obtener informacion de docker
 
 ```
-docker-compose -f stack-billing.yml up -d
-```
-
-Detener todos los servicios de la orquestación
-
-```
-docker-compose -f stack-billing.yml sto
-```
-
-Detener todos los contenedores
-
-```
-docker stop $(docker ps -a -q)
+docker info
 ```
